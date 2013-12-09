@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    body
+        div(ng-controller = "NoteFormCtrl")
+            form(novalidate class = "simple-form")
+                each fieldProps, fieldName in fields
+                    .field
+                        label(for = fieldName) #{fieldProps.displayString}
+                        input(type = fieldProps.inputType, id = fieldName, ng-model = "note." + fieldName)
+                .message Hello, thank you for writing a coffee note, please complete as many of these fields as you can.
+                button.submit(ng-click = "reset()") Clear
+                button.reset(ng-click = "update(note)") Submit

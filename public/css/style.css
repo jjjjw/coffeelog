@@ -1,0 +1,29 @@
+body {
+    font-family: monospace;
+}
+
+label {
+    display: block;
+}
+
+.field {
+    padding: 5px 0 5px 0;
+    width: 200px;
+    margin-left: 10px;
+}
+
+/* Bootstrap style */
+button {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+    padding: 6px 12px;
+    font-size: 12px;
+    text-align: center;;
+    cursor: pointer;
+    border: 1px solid transparent;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: block;
+}
