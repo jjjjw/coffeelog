@@ -3,7 +3,13 @@ var express = require('express'),
   fs = require('fs'),
   config = require('./config/config');
 
-mongoose.connect(config.db);
+var mongoUri = process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  config.db;
+
+var PORT = process.env.PORT || config.port;
+
+mongoose.connect(mongoUri);
 var db = mongoose.connection;
 db.on('error', function () {
   throw new Error('unable to connect to database at ' + config.db);
@@ -21,4 +27,4 @@ var app = express();
 require('./config/express')(app, config);
 require('./config/routes')(app);
 
-app.listen(config.port);
+app.listen(PORT);

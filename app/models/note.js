@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
 var NoteSchema = new Schema({
   ///////////////////////////////////
   baristaName:  String,
+  coffeeName: String,
   preparationType: String,  // espresso, v60, clever, siphon, bonmac, chemex
 
   ///////////////////////////////////
@@ -40,6 +41,10 @@ exports.NoteDisplaySchema = {
     displayString: 'Barista name',
     inputType: 'string'
   },
+  coffeeName: {
+    displayString: 'Coffee name',
+    inputType: 'string'
+  },
   preparationType: {
     displayString: 'Preparation type',
     inputType: 'string'
@@ -50,7 +55,7 @@ exports.NoteDisplaySchema = {
     inputType: 'date'
   },
   preparationDate: {
-    displayString: 'Roast date',
+    displayString: 'Preparation date',
     inputType: 'date'
   },
   ///////////////////////////////////
@@ -88,11 +93,11 @@ exports.NoteDisplaySchema = {
     inputType: 'number'
   },
   weightOfDose: {
-    displayString: 'Wieght of dose (g)',
+    displayString: 'Weight of dose (g)',
     inputType: 'number'
   },
   weightOfYield: {
-    displayString: 'Wieght of yield (g)',
+    displayString: 'Weight of yield (g)',
     inputType: 'number'
   },
 
